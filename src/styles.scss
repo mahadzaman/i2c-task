@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "assets/vars/colors";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: color(bg-main);
+}
+
+a {
+  text-decoration: none;
+  color: color(lighter-dark);
+
+  &:hover,
+  &:focus {
+    color: darken(color(lighter-dark), 15%);
+  }
+}
+
+input {
+  height: 51px;
+  background-color: color(input-bg);
+  color: color(lighter-dark);
+  border: 1px solid color(grey);
+  border-radius: 5px;
+  padding: 16px;
+
+  &::placeholder {
+    color: color(place-holder)
+  }
+}
+
+.error {
+  margin: 0;
+  margin-top: 5px;
+  color: color(red);
+}
+
+button {
+  background-color: color(secondary);
+  font-weight: 700;
+  color: color(light);
+  padding: 16px 72px;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.partners-carousel {
+
+  .slick-track {
+      display: flex;
+      align-items: center;
+  }
+
+  .slick-prev, .slick-next {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slick-prev {
+    left: -88px;
+  }
+
+  .slick-next {
+    right: -88px;
+  }
+
+  .slick-next:before {
+    content: url(assets/images/chevron-right.svg);
+  }
+
+  .slick-prev:before {
+    content: url(assets/images/chevron-left.svg);
+  }
+}

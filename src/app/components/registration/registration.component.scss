@@ -1,0 +1,61 @@
+@import "../../../assets/vars/colors";
+
+.registration {
+	margin-top: 100px;
+
+	h4 {
+		font-size: 36px;
+		font-weight: 800;
+	}
+
+	p:not(.error) {
+		margin-top: 24px;
+		font-weight: 500;
+		color: color(lighter-dark);
+	}
+
+	.flex-row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -15px;
+		margin-left: -15px;
+
+		.flex-col-50 {
+			flex: 0 0 50%;
+			width: 50%;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+
+	.registration-form-wrapper {
+		background-color: color(light);
+		border-radius: 10px;
+		padding: 48px;
+	}
+
+	.reg-form {
+		margin-top: 48px;
+
+		.field {
+			display: flex;
+			flex-direction: column;
+
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+
+			label {
+				font-weight: 500;
+				margin-bottom: 8px;
+				span {
+					color: color(red);
+				}
+			}
+		}
+
+		button[type=submit] {
+			margin-top: 48px;
+		}
+	}
+}

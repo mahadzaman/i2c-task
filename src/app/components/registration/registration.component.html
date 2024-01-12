@@ -1,0 +1,72 @@
+<section class="registration">
+  <div class="flex-row">
+    <div class="flex-col-50">
+      <img src="assets/images/assistant-bot.svg" alt="Assistant bot vector" />
+      <div class="color-dots">
+        <span class="secondary"></span>
+        <span class="primary"></span>
+        <span class="pink"></span>
+        <span class="secondary"></span>
+        <span class="secondary"></span>
+        <span class="pink"></span>
+        <span class="secondary"></span>
+        <span class="blue"></span>
+      </div>
+    </div>
+    <div class="flex-col-50">
+      <div class="registration-form-wrapper">
+        <h4>Registration</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in
+          tristique senectus dui pharetra sit.
+        </p>
+
+        <form class="reg-form" action="" (submit)="onSubmit(email)">
+          <div class="field">
+            <label for="name">Name <span>*</span></label>
+            <input
+              type="text"
+              name="name"
+              required
+              [(ngModel)]="user.name"
+              placeholder="Enter your name"
+            />
+            @if (!user.name && validations) {
+            <p class="error">Name is required</p>
+            }
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input
+              type="text"
+              name="company"
+              [(ngModel)]="user.company"
+              placeholder="Enter your company name"
+            />
+          </div>
+          <div class="field">
+            <label for="email">Email address <span>*</span></label>
+            <input
+              type="email"
+              name="email"
+              email
+              #email="ngModel"
+              required
+              [(ngModel)]="user.email"
+              placeholder="Enter your email address"
+            />
+            @if (email.errors?.['required'] && validations) {
+            <p class="error">Email address is required</p>
+            } @else if (email.errors?.['email'] && validations) {
+            <p class="error">Please enter a valid email address</p>
+            }
+          </div>
+          <button type="submit">Submit</button>
+          @if (formSubmit) {
+          <p>{{ formSubmissionText }}</p>
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+@import '../../../assets/vars/colors';
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 60px;
+
+  nav {
+    margin-left: auto;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      gap: 32px;
+    }
+
+    .contact-btn {
+        background: color(primary);
+        border-radius: 40px;
+        padding: 16px 32px;
+        color: #fff;
+        font-weight: 700;
+        transition: all ease 0.2s;
+        box-shadow: 0 0 0 rgba(color(primary), 70%);
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 10px 40px rgba(color(primary), 70%);
+        }
+    }
+  }
+}

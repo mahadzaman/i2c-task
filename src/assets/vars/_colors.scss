@@ -1,0 +1,19 @@
+$colors: (
+    bg-main: #EBF0FF,
+    primary: #46B0E6,
+    secondary: #F89D21,
+    light: #fff,
+    dark: #000,
+    lighter-dark: #515151,
+    pink: #E49192,
+    blue: #5380EA,
+    red: #EB5939,
+    grey: #DEE6FF,
+    input-bg: #F9FAFF,
+    place-holder: #AAAAAA,
+    footer-border: #CBCBCB
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
