@@ -19,6 +19,7 @@
 		flex-wrap: wrap;
 		margin-right: -15px;
 		margin-left: -15px;
+    align-items: flex-end;
 
 		.flex-col-55 {
 			flex: 0 0 55%;
@@ -28,7 +29,8 @@
 
 			img {
 				@media (min-width: 992px) {
-					padding-top: 80px
+					padding-top: 80px;
+          padding-bottom: 55px;
 				}
 			}
 
