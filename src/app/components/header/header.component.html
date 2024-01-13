@@ -1,8 +1,16 @@
-<header>
+<header class="container">
   <div class="logo-container">
     <a href="#"><img src="assets/images/i2c-logo.svg" alt="i2c logo" /></a>
   </div>
-  <nav>
+  <nav [class]="menuOpen ? 'menu-open' : ''">
+    <a href="#" (click)="closeMenu()" class="close-menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92">
+        <path
+          d="M70.7 64.3c1.8 1.8 1.8 4.6 0 6.4-.9.9-2 1.3-3.2 1.3-1.2 0-2.3-.4-3.2-1.3L46 52.4 27.7 70.7c-.9.9-2 1.3-3.2 1.3s-2.3-.4-3.2-1.3c-1.8-1.8-1.8-4.6 0-6.4L39.6 46 21.3 27.7c-1.8-1.8-1.8-4.6 0-6.4 1.8-1.8 4.6-1.8 6.4 0L46 39.6l18.3-18.3c1.8-1.8 4.6-1.8 6.4 0 1.8 1.8 1.8 4.6 0 6.4L52.4 46l18.3 18.3z"
+        ></path>
+      </svg>
+    </a>
+
     <ul>
       <li><a href="#">About us</a></li>
       <li><a href="#">Registrations</a></li>
@@ -10,4 +18,16 @@
       <li><a class="contact-btn" href="#">Contact us</a></li>
     </ul>
   </nav>
+  <a href="#" (click)="openMenu()" class="menu-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="menu">
+      <g data-name="Layer 2">
+        <g data-name="menu">
+          <rect width="18" height="2" x="3" y="11" rx=".95" ry=".95"></rect>
+          <rect width="18" height="2" x="3" y="16" rx=".95" ry=".95"></rect>
+          <rect width="18" height="2" x="3" y="6" rx=".95" ry=".95"></rect>
+        </g>
+      </g>
+    </svg>
+  </a>
+  <div class="menu-bg-overlay" [class]="menuOpen ? 'visible' : ''"></div>
 </header>

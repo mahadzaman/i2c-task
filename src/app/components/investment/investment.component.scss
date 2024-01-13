@@ -11,14 +11,21 @@
     flex: 0 0 50%;
     padding-left: 15px;
     padding-right: 15px;
+
+    @media (max-width: 992px) {
+      flex: 0 0 100%;
+      width: 100%;
+    }
   }
 }
 
 .investment {
   margin-top: 100px;
+  max-width: 100%;
+  overflow-x: clip;
 
   h1 {
-    font-size: 48px;
+    font-size: clamp(32px, 5vw, 3rem);
 
     span {
       color: color(primary);
@@ -48,9 +55,15 @@
       background-color: color(light);
       padding: 24px;
       display: flex;
+      align-items: center;
       gap: 24px;
       margin-bottom: 16px;
       box-shadow: 0 24px 24px rgba(color(dark), 8%);
+
+      img {
+        width: 64px;
+        aspect-ratio: 1/1;
+      }
 
       &:last-child {
         background-color: transparent;
@@ -60,6 +73,7 @@
           rgba(255, 255, 255, 1) 100%
         );
         box-shadow: none;
+
         img,
         p,
         span {
@@ -89,6 +103,7 @@
   height: 100%;
   left: 15px;
   top: 0;
+  z-index: -1;
 
   & > * {
     position: absolute;
@@ -166,5 +181,76 @@
   *:last-child {
     bottom: 10%;
     left: 12%;
+  }
+}
+
+.bg-gradients-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* background: radial-gradient(
+        circle,
+        rgb(185, 206, 234) 0%,
+        rgba(246, 251, 248, 0) 70%
+      )
+      no-repeat 90% 13% / 640px,
+    radial-gradient(
+      circle,
+      rgba(255, 223, 124, 0.7) 0%,
+      rgba(246, 251, 248, 0) 70%
+    ) no-repeat -31% 33% / 640px; */
+  max-width: 1200px;
+  transform: translateX(-50%);
+
+  span {
+    display: block;
+    height: 634px;
+    width: 634px;
+    position: absolute;
+
+    &:first-child,
+    &:last-child {
+      background: radial-gradient(circle, rgba(185, 206, 234, 1) 0%, rgba(246, 251, 248, 0) 70%);
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      background: radial-gradient(circle, rgba(255, 223, 124, 0.7) 0%, rgba(246,251,248, 0) 70%);
+    }
+
+    &:first-child {
+      right: 18px;
+      top: 13%;
+      z-index: 5;
+    }
+
+    &:nth-child(2) {
+      left: -31%;
+      top: 33%;
+      z-index: 4;
+    }
+
+    &:nth-child(3) {
+      left: 34.5%;
+      bottom: 36%;
+      z-index: 3;
+    }
+
+    &:nth-child(4) {
+      background: radial-gradient(circle, rgba(250, 183, 184, 0.7) 0%, rgba(246, 251, 248, 0) 70%);
+      left: 26%;
+      top: -1%;
+      z-index: 2;
+    }
+
+    &:last-child {
+      left: 4%;
+      bottom: 50%;
+      z-index: 1;
+      opacity: 70%;
+    }
   }
 }

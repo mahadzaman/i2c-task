@@ -9,13 +9,28 @@ footer {
     border-top: 1px solid color(footer-border);
     padding: 32px 0;
 
+    @media screen and (max-width: 600px) {
+      justify-content: center;
+    }
+
     nav {
       margin-left: auto;
 
       ul {
         display: flex;
+        flex-wrap: wrap;
         list-style-type: none;
         gap: 32px;
+        align-items: center;
+
+        @media screen and (max-width: 600px) {
+          margin-top: 24px;
+          justify-content: center;
+        }
+
+        li {
+          display: block;
+        }
       }
 
       .contact-btn {
@@ -38,5 +53,9 @@ footer {
 		font-size: 11px;
 		color: color(lighter-dark);
 		padding-bottom: 15px;
+
+    @media screen and (max-width: 600px) {
+      text-align: center;
+    }
 	}
 }

@@ -1,20 +1,27 @@
-<section class="partners">
-  <div class="section-title">
-		<h2>Trusted by</h2>
-	</div>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique
-    senectus dui pharetra sit.
-  </p>
-  <ngx-slick-carousel
-    class="carousel partners-carousel"
-    #slickModal="slick-carousel"
-    [config]="slideConfig"
-  >
-    @for (slide of slides; track slide.img) {
-    <div ngxSlickItem class="slide">
-      <img [src]="slide.img" alt="" [width]="slide.width" />
-    </div>
-    }
-  </ngx-slick-carousel>
+<section class="partners pos-rel">
+  <div class="bg-gradients-wrapper">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="container">
+    <div class="section-title">
+        <h2>Trusted by</h2>
+      </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae, in tristique
+      senectus dui pharetra sit.
+    </p>
+    <ngx-slick-carousel
+      class="carousel partners-carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (breakpoint)="breakpoint($event)"
+      responsive="breakpoints"
+    >
+      @for (slide of slides; track slide.img) {
+      <div ngxSlickItem class="slide">
+        <img [src]="slide.img" alt="" [width]="slide.width" />
+      </div>
+      }
+    </ngx-slick-carousel>
+  </div>
 </section>

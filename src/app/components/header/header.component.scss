@@ -6,13 +6,57 @@ header {
   align-items: center;
   margin-top: 60px;
 
+  .close-menu-btn {
+    display: block;
+    width: 43px;
+    margin-left: auto;
+  }
+
+  .menu-btn, .close-menu-btn {
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .menu-btn {
+    width: 43px;
+    fill: color(dark);
+    margin-left: auto;
+  }
+
   nav {
+    @media (max-width: 992px) {
+      transform: translateX(calc(100% + 1px));
+      transition: transform 0.3s ease, box-shadow ease 0.3s;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 70%;
+      z-index: 999;
+      background: color(secondary);
+      padding: 30px;
+      box-shadow: -1px 0 24px rgba(color(dark), 0);
+    }
+
+    &.menu-open {
+      transform: translateX(0);
+      box-shadow: -1px 0 24px rgba(color(dark), 35%);
+    }
+
     margin-left: auto;
 
     ul {
       display: flex;
       list-style-type: none;
       gap: 32px;
+      padding-left: 0;
+      align-items: center;
+
+      @media (max-width: 992px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     .contact-btn {
@@ -28,6 +72,23 @@ header {
         &:focus {
             box-shadow: 0 10px 40px rgba(color(primary), 70%);
         }
+    }
+  }
+
+  .menu-bg-overlay {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ease 0.3s, visibility ease 0.3s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(color(dark), 30%);
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
